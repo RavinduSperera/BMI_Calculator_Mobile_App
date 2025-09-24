@@ -130,10 +130,10 @@ class _MainPageState extends State<MainPage> {
                   Text(
                     '22.3',
                     style: kInputLabelColor.copyWith(
-                      color: kOutputTextColor,
+                      color: kOutputTextColor, // add style from constants.dart
                       fontSize: 60,
                     ),
-                  ), // add style from constants.dart
+                  ),
                 ],
               ),
             ],
