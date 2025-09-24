@@ -1,3 +1,4 @@
+import 'package:bmi_cal/constants.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,6 +14,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          padding: EdgeInsets.all(20), // padding for the whole container
           color: Colors.white,
           child: Column(
             children: [
@@ -47,6 +49,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ],
               ),
+              SizedBox(height: 50), // add dynamic space value
               Row(
                 children: [
                   Padding(
@@ -59,7 +62,8 @@ class _MainPageState extends State<MainPage> {
                             Text(
                               '176',
                               style: TextStyle(
-                                color: Color(0xFFFF8888),
+                                color:
+                                    kTextColor, // use the constant from the constants.dart file
                                 fontSize: 50,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -93,7 +97,8 @@ class _MainPageState extends State<MainPage> {
                             Text(
                               '80',
                               style: TextStyle(
-                                color: Color(0xFFFF8888),
+                                color:
+                                    kTextColor, // use the constant from the constants.dart file
                                 fontSize: 50,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -118,7 +123,19 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ],
               ),
-              Column(children: [Text('BMI'), Text('22.3')]),
+              const SizedBox(height: 50),
+              Column(
+                children: [
+                  Text('BMI'),
+                  Text(
+                    '22.3',
+                    style: kInputLabelColor.copyWith(
+                      color: kOutputTextColor,
+                      fontSize: 60,
+                    ),
+                  ), // add style from constants.dart
+                ],
+              ),
             ],
           ),
         ),
