@@ -15,7 +15,7 @@ The main goal of this project is to gain experience in **Flutter widgets** and *
 
 ## 🚀 How to Run
 1. Clone this repository  
-   ```bash
 2. cd bmi_calculator_app
 3. flutter pub get
 4. flutter run
+
