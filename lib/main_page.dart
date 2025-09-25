@@ -12,6 +12,7 @@ class _MainPageState extends State<MainPage> {
   // define variables
   int height = 150;
   int weight = 50;
+  late double bmi = calculateBMI(height: height, weight: weight);
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +80,10 @@ class _MainPageState extends State<MainPage> {
                                     setState(() {
                                       if (height > 50) {
                                         height--;
+                                        bmi = calculateBMI(
+                                          height: height,
+                                          weight: weight,
+                                        );
                                       }
                                     });
                                     print(height);
@@ -93,6 +98,10 @@ class _MainPageState extends State<MainPage> {
                                     setState(() {
                                       if (height < 220) {
                                         height++;
+                                        bmi = calculateBMI(
+                                          height: height,
+                                          weight: weight,
+                                        );
                                       }
                                     });
                                     print('H P');
@@ -130,6 +139,10 @@ class _MainPageState extends State<MainPage> {
                                     setState(() {
                                       if (weight > 30) {
                                         weight--;
+                                        bmi = calculateBMI(
+                                          height: height,
+                                          weight: weight,
+                                        );
                                       }
                                     });
                                     print("W M");
@@ -144,6 +157,10 @@ class _MainPageState extends State<MainPage> {
                                     setState(() {
                                       if (weight < 200) {
                                         weight++;
+                                        bmi = calculateBMI(
+                                          height: height,
+                                          weight: weight,
+                                        );
                                       }
                                     });
                                     print('W P');
@@ -164,7 +181,7 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Text('BMI'),
                   Text(
-                    '22.3',
+                    bmi.toStringAsFixed(2), // showing only 2 decimal places
                     style: kInputLabelColor.copyWith(
                       color: kOutputTextColor, // add style from constants.dart
                       fontSize: 60,
@@ -180,5 +197,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   // function define for calculating BMI
-  void calculateBMI() {}
+  double calculateBMI({required int height, required int weight}) {
+    return (weight / (height * height)) * 10000; // formula
+  }
 }
