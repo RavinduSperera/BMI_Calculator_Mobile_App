@@ -25,7 +25,8 @@ class _MainPageState extends State<MainPage> {
             children: [
               Row(
                 children: [
-                  Padding(
+                  Container(
+                    color: Color.fromARGB(255, 110, 104, 234).withAlpha(100),
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
@@ -39,7 +40,8 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                   const Spacer(), // separated the two columns
-                  Padding(
+                  Container(
+                    color: Color(0xFFF48FB1).withAlpha(100),
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
