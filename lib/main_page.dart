@@ -9,6 +9,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  // define variables
+  int height = 150;
+  int weight = 50;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,10 +61,10 @@ class _MainPageState extends State<MainPage> {
                     child: Column(
                       children: [
                         Column(
-                          children: const [
-                            Text('Height'),
+                          children: [
+                            const Text('Height'),
                             Text(
-                              '176',
+                              '$height',
                               style: TextStyle(
                                 color:
                                     kTextColor, // use the constant from the constants.dart file
@@ -71,13 +75,25 @@ class _MainPageState extends State<MainPage> {
                             Row(
                               children: [
                                 FloatingActionButton(
-                                  onPressed: null,
-                                  child: Icon(Icons.remove, size: 40),
+                                  onPressed: () {
+                                    setState(() {
+                                      height--;
+                                    });
+                                    print(height);
+                                  },
+                                  child: const Icon(Icons.remove, size: 40),
                                 ),
-                                SizedBox(width: 12), // add dynamic space value
+                                const SizedBox(
+                                  width: 12,
+                                ), // add dynamic space value
                                 FloatingActionButton(
-                                  onPressed: null,
-                                  child: Icon(Icons.add, size: 40),
+                                  onPressed: () {
+                                    setState(() {
+                                      height++;
+                                    });
+                                    print('H P');
+                                  },
+                                  child: const Icon(Icons.add, size: 40),
                                 ),
                               ],
                             ),
@@ -92,10 +108,10 @@ class _MainPageState extends State<MainPage> {
                     child: Column(
                       children: [
                         Column(
-                          children: const [
-                            Text('Weight'),
+                          children: [
+                            const Text('Weight'),
                             Text(
-                              '80',
+                              '$weight',
                               style: TextStyle(
                                 color:
                                     kTextColor, // use the constant from the constants.dart file
@@ -106,13 +122,25 @@ class _MainPageState extends State<MainPage> {
                             Row(
                               children: [
                                 FloatingActionButton(
-                                  onPressed: null,
-                                  child: Icon(Icons.remove, size: 40),
+                                  onPressed: () {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                    print("W M");
+                                  },
+                                  child: const Icon(Icons.remove, size: 40),
                                 ),
-                                SizedBox(width: 12), // add dynamic space value
+                                const SizedBox(
+                                  width: 12,
+                                ), // add dynamic space value
                                 FloatingActionButton(
-                                  onPressed: null,
-                                  child: Icon(Icons.add, size: 40),
+                                  onPressed: () {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                    print('W P');
+                                  },
+                                  child: const Icon(Icons.add, size: 40),
                                 ),
                               ],
                             ),
@@ -142,6 +170,4 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
-
-  // function defining
 }
