@@ -178,4 +178,7 @@ class _MainPageState extends State<MainPage> {
       ),
     );
   }
+
+  // function define for calculating BMI
+  void calculateBMI() {}
 }
