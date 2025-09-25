@@ -187,6 +187,16 @@ class _MainPageState extends State<MainPage> {
                       fontSize: 60,
                     ),
                   ),
+                  SizedBox(height: 100),
+                  Text(
+                    getResult(bmi),
+                    style: TextStyle(
+                      color: Color(0xFF24D876),
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: Color(0xFFFF8888),
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -199,5 +209,20 @@ class _MainPageState extends State<MainPage> {
   // function define for calculating BMI
   double calculateBMI({required int height, required int weight}) {
     return (weight / (height * height)) * 10000; // formula
+  }
+
+  // function for inform the level and status of the bmi
+  String getResult(double bmi) {
+    String level = '';
+    if (bmi < 18.5) {
+      level = 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      level = 'Normal weight';
+    } else if (bmi >= 25 && bmi < 29.9) {
+      level = 'Overweight';
+    } else {
+      level = 'Obesity';
+    }
+    return level;
   }
 }
