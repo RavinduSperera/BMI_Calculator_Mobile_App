@@ -77,7 +77,9 @@ class _MainPageState extends State<MainPage> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      height--;
+                                      if (height > 50) {
+                                        height--;
+                                      }
                                     });
                                     print(height);
                                   },
@@ -89,7 +91,9 @@ class _MainPageState extends State<MainPage> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      height++;
+                                      if (height < 220) {
+                                        height++;
+                                      }
                                     });
                                     print('H P');
                                   },
@@ -124,7 +128,9 @@ class _MainPageState extends State<MainPage> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      weight--;
+                                      if (weight > 30) {
+                                        weight--;
+                                      }
                                     });
                                     print("W M");
                                   },
@@ -136,7 +142,9 @@ class _MainPageState extends State<MainPage> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      weight++;
+                                      if (weight < 200) {
+                                        weight++;
+                                      }
                                     });
                                     print('W P');
                                   },
