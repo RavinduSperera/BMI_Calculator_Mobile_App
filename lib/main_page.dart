@@ -26,7 +26,11 @@ class _MainPageState extends State<MainPage> {
               Row(
                 children: [
                   Container(
-                    color: Color.fromARGB(255, 110, 104, 234).withAlpha(100),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 110, 104, 234).withAlpha(75),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
@@ -41,7 +45,11 @@ class _MainPageState extends State<MainPage> {
                   ),
                   const Spacer(), // separated the two columns
                   Container(
-                    color: Color(0xFFF48FB1).withAlpha(100),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF48FB1).withAlpha(75),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
@@ -193,10 +201,9 @@ class _MainPageState extends State<MainPage> {
                   Text(
                     getResult(bmi),
                     style: TextStyle(
-                      color: Color(0xFF24D876),
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 50,
                       fontWeight: FontWeight.bold,
-                      backgroundColor: Color(0xFFFF8888),
                     ),
                   ),
                 ],
