@@ -12,6 +12,7 @@ class _MainPageState extends State<MainPage> {
   // define variables
   int height = 150;
   int weight = 50;
+  String gender = '';
   late double bmi = calculateBMI(height: height, weight: weight);
 
   @override
@@ -25,41 +26,61 @@ class _MainPageState extends State<MainPage> {
             children: [
               Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 110, 104, 234).withAlpha(75),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      print("Male");
+                      setState(() {
+                        gender = 'M'; // should be define by an enum
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: gender == 'M'
+                            ? Color.fromARGB(255, 79, 73, 190).withAlpha(150)
+                            : Color.fromARGB(255, 24, 41, 150).withAlpha(75),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
 
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Column(
-                          children: const [
-                            Icon(Icons.male, size: 150),
-                            Text('Male'),
-                          ],
-                        ),
-                      ],
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Column(
+                            children: const [
+                              Icon(Icons.male, size: 150),
+                              Text('Male'),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const Spacer(), // separated the two columns
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF48FB1).withAlpha(75),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      print("Female");
+                      setState(() {
+                        gender = 'F'; // should be define by an enum
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: gender == 'F'
+                            ? Color(0xFFF48FB1).withAlpha(150)
+                            : Color(0xFFF48FB1).withAlpha(75),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
 
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Column(
-                          children: const [
-                            Icon(Icons.female, size: 150),
-                            Text('Female'),
-                          ],
-                        ),
-                      ],
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Column(
+                            children: const [
+                              Icon(Icons.female, size: 150),
+                              Text('Female'),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
